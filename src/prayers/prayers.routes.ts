@@ -5,6 +5,12 @@ const router = Router();
 
 router
   .route('/prayers')
-  .get(PrayerController.readPrayers);
+  .get(PrayerController.readPrayers)
+  .post(PrayerController.createPrayer);
+
+router
+  .route('/prayers/:id')
+  .put(PrayerController.updatePrayer)
+  .delete(PrayerController.deletePrayer);
 
 export default router;
