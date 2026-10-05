@@ -2,7 +2,14 @@ export const prayerQueries = {
   readPrayers: `
     SELECT *
     FROM Prayer
+    
   `,
+
+  readPrayer: `
+  SELECT *
+  FROM Prayer
+  WHERE Prayer_id = ?
+`,
 
   createPrayer: `
     INSERT INTO Prayer

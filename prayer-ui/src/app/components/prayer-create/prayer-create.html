@@ -1,0 +1,63 @@
+<div class="container mt-4">
+
+  <h2>Submit a Prayer Request</h2>
+
+  <form (ngSubmit)="onSubmit()">
+
+    <div class="mb-3">
+      <label for="title" class="form-label">Prayer Title</label>
+      <input
+        type="text"
+        class="form-control"
+        id="title"
+        name="title"
+        [(ngModel)]="prayer.title"
+        required>
+    </div>
+
+    <div class="mb-3">
+      <label for="description" class="form-label">Prayer Request</label>
+      <textarea
+        class="form-control"
+        id="description"
+        name="description"
+        [(ngModel)]="prayer.description"
+        rows="4">
+      </textarea>
+    </div>
+
+    <div class="mb-3">
+      <label for="urgency" class="form-label">Urgency</label>
+      <select
+        class="form-select"
+        id="urgency"
+        name="urgency"
+        [(ngModel)]="prayer.urgency">
+
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+
+      </select>
+    </div>
+
+    <div class="form-check mb-3">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        id="public"
+        name="public"
+        [(ngModel)]="prayer.isPublic">
+
+      <label class="form-check-label" for="public">
+        Make this prayer public
+      </label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+      Submit Prayer
+    </button>
+
+  </form>
+
+</div>

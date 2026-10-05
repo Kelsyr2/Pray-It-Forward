@@ -1,0 +1,30 @@
+<div class="container mt-4">
+
+  <h2>Prayer Requests</h2>
+
+  <p>Number of prayers: {{ prayers().length }}</p>
+
+  <div class="card mb-3" *ngFor="let prayer of prayers()">
+    <div class="card-body">
+
+      <h5 class="card-title">
+        {{ prayer.title }}
+      </h5>
+
+      <p class="card-text">
+        {{ prayer.description }}
+      </p>
+
+      <p>
+        <strong>Urgency:</strong> {{ prayer.urgency }}
+      </p>
+
+      <p>
+        <strong>Public:</strong>
+        {{ prayer.isPublic ? 'Yes' : 'No' }}
+      </p>
+
+    </div>
+  </div>
+
+</div>

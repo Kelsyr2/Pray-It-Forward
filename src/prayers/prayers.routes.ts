@@ -10,6 +10,7 @@ router
 
 router
   .route('/prayers/:id')
+  .get(PrayerController.readPrayer)
   .put(PrayerController.updatePrayer)
   .delete(PrayerController.deletePrayer);
 

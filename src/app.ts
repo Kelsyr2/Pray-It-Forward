@@ -2,9 +2,11 @@ import express from 'express';
 import type { Request, Response } from 'express';
 import { pool } from './services/mysql.connector';
 import prayersRouter from './prayers/prayers.routes';
+import cors from 'cors';
 
 const app = express();
 const port = 3000;
+app.use(cors());
 
 app.use(express.json());
 app.use('/', prayersRouter);

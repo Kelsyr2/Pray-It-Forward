@@ -1,9 +1,9 @@
 export interface Prayer {
   prayerId?: number;
-  userId?: number;
+  userId: number;
   title: string;
-  description?: string;
-  dateCreated?: Date;
-  urgency?: string;
+  description: string;
+  dateCreated?: string;
+  urgency: string;
   isPublic: boolean;
 }

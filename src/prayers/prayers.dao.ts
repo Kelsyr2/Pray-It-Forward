@@ -7,6 +7,14 @@ export const readPrayers = async () => {
 
   return rows;
 };
+export const readPrayer = async (prayerId: number) => {
+  const [rows] = await pool.query(
+    prayerQueries.readPrayer,
+    [prayerId]
+  );
+
+  return rows;
+};
 
 export const createPrayer = async (prayer: Prayer) => {
   const [result] = await pool.query(

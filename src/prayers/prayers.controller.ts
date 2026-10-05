@@ -16,6 +16,22 @@ export const readPrayers = async (req: Request, res: Response) => {
   }
 };
 
+export const readPrayer = async (req: Request, res: Response) => {
+  try {
+    const prayerId = Number(req.params.id);
+
+    const result = await PrayerDao.readPrayer(prayerId);
+
+    res.status(200).json(result);
+  } catch (error) {
+    console.error('Error reading prayer:', error);
+
+    res.status(500).json({
+      message: 'Error reading prayer'
+    });
+  }
+};
+
 export const createPrayer = async (req: Request, res: Response) => {
   try {
     const prayer: Prayer = req.body;
